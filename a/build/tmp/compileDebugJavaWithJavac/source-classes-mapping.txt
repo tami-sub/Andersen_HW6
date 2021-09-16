@@ -1,0 +1,8 @@
+com/example/andersen_hw5/databinding/FragmentContactDetailsBinding.java
+ com.example.andersen_hw5.databinding.FragmentContactDetailsBinding
+com/example/andersen_hw5/databinding/ContactListFragmentBinding.java
+ com.example.andersen_hw5.databinding.ContactListFragmentBinding
+com/example/andersen_hw5/databinding/ActivityMainBinding.java
+ com.example.andersen_hw5.databinding.ActivityMainBinding
+com/example/andersen_hw5/BuildConfig.java
+ com.example.andersen_hw5.BuildConfig
