@@ -1,10 +1,8 @@
 package com.example.app
 
-import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app.contacts.Contact
 import com.example.app.contacts.Contacts
@@ -22,8 +20,8 @@ class ContactHolder(item: View) : RecyclerView.ViewHolder(item), View.OnClickLis
         contactName.text = contact.name
         contactSurname.text = contact.surname
         contactNumber.text = contact.number
-//        Picasso.with(parent.context).load("https://picsum.photos/300/300").into(imageView)
-
+        val urlSize = 250 + position
+        Picasso.with(imageView.context).load("https://picsum.photos/$urlSize/$urlSize").into(imageView)
     }
 
     init{
@@ -31,9 +29,7 @@ class ContactHolder(item: View) : RecyclerView.ViewHolder(item), View.OnClickLis
     }
 
     override fun onClick(p0: View?): Unit = with(binding){
-        println(contactName.text)
         val result = Bundle()
-
         result.putString("data", position.toString())
         result.putParcelable("allContacts", contacts)
 
@@ -48,18 +44,11 @@ class ContactHolder(item: View) : RecyclerView.ViewHolder(item), View.OnClickLis
         }
     }
 
-    fun sendData(
-        position: Int,
-        resources: Resources, contacts: Contacts,
-        parentFragmentManager: ContactListFragment,
-        parent:ViewGroup
+    fun sendData(resources: Resources, contacts: Contacts,
+                 parentFragmentManager: ContactListFragment,
     ){
         this.resources = resources
         this.parentFragmentManager = parentFragmentManager.parentFragmentManager
         this.contacts = contacts
     }
-    fun getContext(parent:ViewGroup) {
-
-    }
-
 }

@@ -26,10 +26,10 @@ class ContactAdapter(private var contacts: Contacts) :
             contactList.add(i)
         }
         holder.bind(contactList[position])
-        holder.sendData(position,
+        holder.sendData(
             holder.itemView.context.resources,
             contacts,
-            parentFragmentManager = parent.findFragment<ContactListFragment>(),parent)
+            parentFragmentManager = parent.findFragment<ContactListFragment>())
     }
 
     override fun getItemCount(): Int {
